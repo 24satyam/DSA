@@ -85,6 +85,41 @@ public static void reverseArrayUsingStack(int[] arr)
             arr[i] = stack.pop();
         }
     }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Q2. https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
+
+// Simple sa min max nikalo isme bhi explanation chahiye tmko 😠
+// Java 8 se 👍
+int mx = Arrays.stream(arr).max().getAsInt(); 
+int mn = Arrays.stream(arr).min().getAsInt();
+
+
+// Nrml 😀
+ public Pair<Long, Long> getMinMax(int[] arr) {
+        // Code Here
+        // int mx = Arrays.stream(arr).max().get();
+        // int mn = Arrays.stream(arr).max().get();
+        
+        int mx = Integer.MIN_VALUE;
+        int mn = Integer.MAX_VALUE;
+        
+        for(int i = 0; i < arr.length ;i++){
+            if(arr[i] > mx) 
+                mx = arr[i];
+            if(arr[i] < mn) 
+                mn = arr[i];
+            
+        }
+        
+        return new Pair(mn,mx);
+        
+        
+    }
+
+
+
 
 
 
